@@ -17,6 +17,12 @@ public class Main {
        WebElement addButton = driver.findElement(By.id("addNewRecordButton"));
        addButton.click();
 
+       try{
+           Thread.sleep(10);
+       } catch (InterruptedException e){
+           throw new RuntimeException(e);
+       }
+
        WebElement firstName = driver.findElement(By.cssSelector("#firstName"));
        firstName.click();
        firstName.sendKeys("Hüseyin");
